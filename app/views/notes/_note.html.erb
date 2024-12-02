@@ -1,0 +1,26 @@
+<div id="<%= dom_id note %>">
+  <p>
+    <strong>Title:</strong>
+    <%= note.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= note.description %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= note.notes_category.name %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= note.user.name %>
+  </p>
+
+  <p>
+    <strong>Shared with:</strong>
+    <%= note.shared_with.pluck(:name).join(', ') %>
+  </p>
+</div>
