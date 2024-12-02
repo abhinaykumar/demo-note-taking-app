@@ -23,5 +23,12 @@ Open the application in your browser:
 open http://localhost:3000
 ```
 
+Tech stack:
+- Ruby (3.2.3)
+- Ruby on Rails (8.0)
+- SQLite3
+- Hotwire (~5)
+- Bootstrap (~5)
+
 
 
