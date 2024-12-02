@@ -1,0 +1,13 @@
+<div id="<%= "#{dom_id(shared_note)}_shared_note" %>" class="card mb-3">
+    <%= link_to note_path(shared_note), class: "note-link text-decoration-none" do %>
+        <div class="card-body">
+            <h5 class="card-title">
+            <strong>Title:</strong> <%= shared_note.title %> |
+            <strong>Category:</strong> <%= shared_note.notes_category.name %> |
+            <strong>Author:</strong> <%= shared_note.user.name %>
+            </h5>
+        </div>
+    <% end %>
+</div>
+
+

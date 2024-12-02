@@ -1,3 +1,6 @@
+<%= turbo_stream_from 'notes' %>
+<%= turbo_stream_from 'shared-notes' %>
+
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Notes" %>
@@ -11,21 +14,16 @@
 <br />
 <br />
 <div class="container">
-  <div id="notes">
-    <% @notes.each do |note| %>
+  <% @notes.each do |note| %>
+    <%= link_to note_path(note), class: "note-link text-decoration-none" do %>
       <%= render note %>
-      <p>
-      <%= link_to "Show this note", note %>
-    </p>
     <% end %>
-  </div>
+  <% end %>
 </div>
 <hr />
 <div class="container">
   <h2>Shared notes</h2>
-  <% @shared_notes.each do |note| %>
-    <%= render note %>
-  <% end %>
+  <div id='shared-notes'>
+    <%= render collection: @shared_notes, partial: 'notes/shared_note' %>
+  </div>
 </div>
-
-
