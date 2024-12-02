@@ -2,18 +2,26 @@
 
 <% content_for :title, "Notes" %>
 
-<h1>Notes</h1>
-<%= link_to "New note", new_note_path %>
-<div id="notes">
-  <% @notes.each do |note| %>
-    <%= render note %>
-    <p>
+
+<div class="container">
+  <h1>Notes</h1>
+  <%= link_to "Create New note", new_note_path, class: "btn btn-primary" %>
+  <%= link_to "Invite a user", new_user_invitation_path, class: "btn btn-success" %>
+</div>
+<br />
+<br />
+<div class="container">
+  <div id="notes">
+    <% @notes.each do |note| %>
+      <%= render note %>
+      <p>
       <%= link_to "Show this note", note %>
     </p>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 <hr />
-<div>
+<div class="container">
   <h2>Shared notes</h2>
   <% @shared_notes.each do |note| %>
     <%= render note %>

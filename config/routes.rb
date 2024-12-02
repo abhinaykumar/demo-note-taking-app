@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root to: "notes#index"
+
+  resources :notes do
+    member do
+      post :share
+    end
+  end
 end

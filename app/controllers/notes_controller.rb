@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_note, only: %i[ show edit update destroy ]
+  before_action :set_note, only: %i[ show edit update destroy share ]
 
   # GET /notes or /notes.json
   def index
@@ -59,6 +59,13 @@ class NotesController < ApplicationController
     end
   end
 
+  def share
+    user = User.find(share_params)
+    ShareNote.find_or_create_by!(shared_by: current_user, note: @note, shared_with: user)
+
+    redirect_to @note, notice: "Note shared with #{user.name}"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_note
@@ -68,5 +75,9 @@ class NotesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def note_params
       params.expect(note: [ :title, :description, :notes_category_id ])
+    end
+
+    def share_params
+      params.expect(:shared_with_id)
     end
 end
