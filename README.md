@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Setup:
 
-Things you may want to cover:
+This is a basic rails application and does not have additional dependencies.
+You can follow setup guide here: https://gorails.com/setup/macos/15-sequoia
 
-* Ruby version
+Once the setup is ready, you can run the following commands to get the application running:
 
-* System dependencies
+```bash
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Configuration
+Start the server:
+```bash
+rails s
+```
 
-* Database creation
+Open the application in your browser:
+```bash
+open http://localhost:3000
+```
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
