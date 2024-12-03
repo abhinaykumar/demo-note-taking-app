@@ -15,5 +15,5 @@ NotesCategory.create(name: "Personal")
 NotesCategory.create(name: "Work")
 NotesCategory.create(name: "Other")
 
-Note.create(title: "My First Note", description: "This is a test note", user: User.first, notes_category: NoteCategory.first)
-Note.create(title: "My Second Note", description: "This is a test note", user: User.last, notes_category: NoteCategory.last)
+Note.create(title: "My First Note", description: "This is a test note", user: User.first, notes_category: NotesCategory.first)
+Note.create(title: "My Second Note", description: "This is a test note", user: User.last, notes_category: NotesCategory.last)
