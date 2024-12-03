@@ -11,9 +11,9 @@
 User.create(name: "Ginger", email: "ginger@example.com", password: "password")
 User.create(name: "Garlic", email: "garlic@example.com", password: "password")
 
-NoteCategory.create(name: "Personal")
-NoteCategory.create(name: "Work")
-NoteCategory.create(name: "Other")
+NotesCategory.create(name: "Personal")
+NotesCategory.create(name: "Work")
+NotesCategory.create(name: "Other")
 
 Note.create(title: "My First Note", description: "This is a test note", user: User.first, notes_category: NoteCategory.first)
 Note.create(title: "My Second Note", description: "This is a test note", user: User.last, notes_category: NoteCategory.last)
