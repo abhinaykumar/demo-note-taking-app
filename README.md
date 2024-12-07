@@ -1,5 +1,6 @@
 # README
 
+Access demo here: https://demo-note-taking-app.onrender.com
 Setup:
 
 This is a basic rails application and does not have additional dependencies.
